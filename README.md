@@ -36,11 +36,10 @@ State 1	At-Risk	Very low activity, disengaged.	Urgent Tutor Support & Motivation
 State 2	High-Load	Peak engagement but high fatigue.	Short Visual Recap Videos (Low-effort)
 📂 Dataset Information
 
-This project utilizes the Open University Learning Analytics Dataset (OULAD).
-
-    Source: UCI Machine Learning Repository - OULAD
-
-    Features: We focused on studentVle.csv (Clickstream data) and studentInfo.csv (Demographics and Language Friction indicators).
+### 📂 Dataset
+This project uses the **Open University Learning Analytics Dataset (OULAD)**. 
+- **Download Link:** [Official UCI Repository](https://archive.ics.uci.edu/dataset/340/open+university+learning+analytics+dataset)
+- **Files Required:** Please ensure `studentVle.csv` and `studentInfo.csv` are placed in the project directory.
 
 🚀 Setup & Installation
 
