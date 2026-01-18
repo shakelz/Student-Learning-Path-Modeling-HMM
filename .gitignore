@@ -1,0 +1,21 @@
+# Dataset (Bhot bada hai)
+*.csv
+*.zip
+data/
+
+# Virtual Environment (GitHub pe nahi dalte)
+env/
+venv/
+bin/
+lib/
+share/
+include/
+pyvenv.cfg
+
+# Python kachra
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+etc/
+lib64/
+readme.txt
