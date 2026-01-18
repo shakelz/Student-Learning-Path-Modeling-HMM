@@ -1,52 +1,77 @@
-<<<<<<< HEAD
-# Student-Learning-Path-Modeling-HMM
-A Gaussian HMM-based framework to model student learning paths by tracking mental fatigue and language friction. Includes a personalized recommendation engine for adaptive learning.
-=======
 🎓 Human-Centric Student Path Modeling using Gaussian HMM
 📍 Project Overview
 
-Traditional learning platforms (Coursera, Udemy) focus only on Performance (Right/Wrong answers). This project shifts the focus to the Human Element. We model the "Hidden" mental states of students—specifically Mental Fatigue and Language Friction—to provide personalized resource recommendations.
+Traditional Learning Management Systems (LMS) primarily focus on performance metrics, such as whether a student answered a question correctly. This project introduces a Human-Centric approach by analyzing the 'Mental State' and 'Language Fatigue' of learners.
 
-This is especially relevant for international students in Berlin, who face cognitive exhaustion due to language barriers while studying complex subjects like Data Science.
-✨ Key Features
+Specifically designed with the context of international students in Berlin, our model captures the "hidden" exhaustion caused by language barriers and content overload. Using Gaussian Hidden Markov Models (HMM), the system dynamically recommends personalized learning resources based on the student's predicted cognitive state.
+🧠 The Motivation: Beyond Grades
 
-    Hidden State Detection: Uses Gaussian Hidden Markov Models (HMM) to identify latent states: Steady, At-Risk, and High-Load.
+    The Language Barrier Tax: International students often experience higher cognitive loads when studying complex Data Science topics in a non-native language.
 
-    Fatigue Scoring: A custom logic to calculate exhaustion based on cumulative interaction sequences.
+    Hidden Exhaustion: Burnout is a latent variable—it is not explicitly recorded in databases. We use sequential behavior to "decode" this hidden state.
 
-    Language Friction Integration: Factors in the difficulty of learning in a non-native language.
+    Content Overload: Instead of a linear path, we provide an adaptive one that knows when a student needs a "Recap Video" versus a "Research Paper."
 
-    Smart Recommendations: Dynamically suggests content (e.g., Short Videos vs. Comprehensive PDFs) based on the predicted mental state.
+🔬 Methodology & Model Comparison
 
-🧠 The Model: Why HMM?
+We compared two distinct approaches to validate our results:
+1. Baseline Model: K-Means Clustering
 
-Unlike static clustering (like K-Means), HMM treats learning as a journey. It captures:
+    Mechanism: Groups students based on the Euclidean distance of their activity metrics.
 
-    Temporal Dependency: A student's state today depends on their behavior yesterday.
+    Limitation: It is a "Static" model. It treats each day as an independent event and fails to capture the learning journey or historical context.
 
-    Transition Probabilities: The likelihood of a student moving from a 'Steady' state to 'Burnout'.
+2. Proposed Model: Gaussian Hidden Markov Model (HMM)
 
-Mathematical Foundation: The model calculates the optimal state sequence using the Viterbi algorithm:
-S^=argSmax​P(S∣O,λ)
-📊 Dataset
+    Mechanism: Models learning as a Sequential Process. It assumes the student's state today is influenced by their activity yesterday.
 
-We utilized the OULAD (Open University Learning Analytics Dataset), focusing on:
+    Advantage: It identifies Latent (Hidden) States. By analyzing transition probabilities, the model accurately predicts when a student is moving from a "Steady" state into a "High-Load/Exhausted" state.
 
-    studentVle.py: For clickstream data and engagement tracking.
+✨ Key Learning States & Personalized Recommendations
 
-    studentInfo.py: For demographic and final result mapping.
+Our model identifies three primary hidden states:
+State	Mental Condition	Characteristics	Recommendation
+State 0	Steady	Balanced engagement, low fatigue.	Comprehensive Research Papers & Case Studies
+State 1	At-Risk	Very low activity, disengaged.	Urgent Tutor Support & Motivational Content
+State 2	High-Load	Peak engagement but high fatigue.	Short Visual Recap Videos (Low-effort)
+📂 Dataset Information
 
-🚀 Getting Started
-1. Prerequisites
+This project utilizes the Open University Learning Analytics Dataset (OULAD).
 
-    Python 3.10+
+    Source: UCI Machine Learning Repository - OULAD
 
-    hmmlearn
+    Features: We focused on studentVle.csv (Clickstream data) and studentInfo.csv (Demographics and Language Friction indicators).
 
-    scikit-learn
+🚀 Setup & Installation
 
-    pandas, numpy, matplotlib, seaborn
+    Clone the Repository:
+    git clone https://github.com/shakelz/Student-Learning-Path-Modeling-HMM.git
 
-2. Installation
+
+
+Install Requirements:
 Bash
->>>>>>> f17dd771 (Initial commit: Student Path HMM Project)
+
+    pip install -r requirements.txt
+
+    Data Preparation: Download the OULAD dataset from the link above and ensure studentVle.csv and studentInfo.csv are in the project root directory.
+
+    Run the Analysis: Open Student_Path_HMM.ipynb in Jupyter Notebook or VS Code and run all cells.
+
+🛠 Tech Stack
+
+    Language: Python 3.12
+
+    Modeling: hmmlearn, scikit-learn
+
+    Data Handling: pandas, numpy
+
+    Visualization: matplotlib, seaborn
+
+👨‍💻 Author
+
+Abdul
+
+    Masters in Data Science Candidate, Berlin, Germany.
+
+    Interest: Educational Data Mining & Human-Computer Interaction.
