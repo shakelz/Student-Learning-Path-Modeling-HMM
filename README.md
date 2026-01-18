@@ -38,7 +38,7 @@ State 2	High-Load	Peak engagement but high fatigue.	Short Visual Recap Videos (L
 
 ### 📂 Dataset
 This project uses the **Open University Learning Analytics Dataset (OULAD)**. 
-- **Download Link:** [Official UCI Repository](https://archive.ics.uci.edu/dataset/340/open+university+learning+analytics+dataset)
+- **Download Link:** [Official UCI Repository]([https://archive.ics.uci.edu/dataset/340/open+university+learning+analytics+dataset)](https://archive.ics.uci.edu/dataset/349/open+university+learning+analytics+dataset)
 - **Files Required:** Please ensure `studentVle.csv` and `studentInfo.csv` are placed in the project directory.
 
 🚀 Setup & Installation
